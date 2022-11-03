@@ -16,11 +16,11 @@ To run the analysis, navigate to the the tab names "All Stocks Analysis", and pr
 The attached screenshots named "Code_Comparison_[]" show two windows - on the right is the original script, the left is the refactored script. There are boxes around lines of code that highlight where they are similar (with dotted lines) and different (solid lines). The colors of the boxes between two windows represent where the code is performing the same essential functions in each respective script. 
 
 ### Differences explained
-The difference between the refactored code (0.1640625) and original code (0.8867188 seconds) is 0.8 seconds (0.7226563). Reference screenshots titled with "VBA_Challenge_2018". 
+The difference between the refactored code (0.1640625) and original code (0.8867188 seconds) is 0.8 seconds (0.7226563). Reference screenshots titled with "VBA_Challenge_2018" (![original code](https://github.com/ahualoh/stock-analysis/blob/main/Resources/VBA_Challenge_2018_original_code.png), ![refactored code](https://github.com/ahualoh/stock-analysis/blob/main/Resources/VBA_Challenge_2018_refactored_code.png)). 
 
 With the refactored code, we created a dimension for "tickerIndex" so that it can be applied as a variable across multiple arrays - tickers(), tickerVolumes(), tickerStartingPrices(), and tickerEndingPrices(), and we don't have to reference each of those array variables by their cell attributes. 
 
-With Tickers being the first array, each variant listed in that array is a "key" to be matched in each row for the other respective information. *"Section 1a, Code_Comparison_1"*, of the refactored side assigns "tickerIndex" as the variable's position to match accroding to the Ticker array. Instead of `tickers` *[section 4, Code_Comparison_2]*,  `tickerIndex` *[section 4, Code_Comparison_2]*.
+With Tickers being the first array, each variant listed in that array is a "key" to be matched in each row for the other respective information. *"[Section 1a, left side of  "Code_Comparison_1"](https://github.com/ahualoh/stock-analysis/blob/main/Resources/Code_Comparison_1_start_marked.png)"*, of the refactored side assigns "tickerIndex" as the variable's position to match accroding to the Ticker array. Instead of `tickers` *![section 5, right side of "Code_Comparison_2"](https://github.com/ahualoh/stock-analysis/blob/main/Resources/Code_Comparison_Screen_2.png)*,  `tickerIndex` *![section 3, right side of "Code_Comparison_2"](https://github.com/ahualoh/stock-analysis/blob/main/Resources/Code_Comparison_1_start_marked.png)*.
 
 The code runs faster with these arrays because `tickerIndex` is now has a static position, so that we are only looping through the data once for each row. 
 
